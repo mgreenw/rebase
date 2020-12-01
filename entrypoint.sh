@@ -77,7 +77,10 @@ git fetch fork $HEAD_BRANCH
 
 # do the rebase
 git checkout -b $HEAD_BRANCH fork/$HEAD_BRANCH
-git rebase --autosquash origin/$BASE_BRANCH
+
+git log
+
+git rebase origin/$BASE_BRANCH --autosquash
 
 git log
 
