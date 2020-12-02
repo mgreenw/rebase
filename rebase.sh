@@ -81,16 +81,16 @@ git checkout -b $HEAD_BRANCH fork/$HEAD_BRANCH
 git branch
 git log
 
-wait 1
+sleep 1
 
 git rebase origin/$BASE_BRANCH --autosquash
 
-wait 1
+sleep 1
 
 git branch
 git log
 
-wait 1
+sleep 1
 
 # push back
 git push --force-with-lease fork $HEAD_BRANCH
