@@ -1,0 +1,7 @@
+name: Automatic Rebase
+description: Automatically rebases PR on '/rebase' comment
+runs:
+  using: composite
+  steps:
+    - run: ./rebase.sh
+      shell: bash
