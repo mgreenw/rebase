@@ -3,5 +3,5 @@ description: Automatically rebases PR on '/rebase' comment
 runs:
   using: composite
   steps:
-    - run: ./rebase.sh
+    - run: ${{ github.action_path }}/rebase.sh
       shell: bash
