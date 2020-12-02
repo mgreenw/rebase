@@ -86,10 +86,8 @@ EDITOR=true git rebase -i --autosquash origin/$BASE_BRANCH
 # push back
 git push --force-with-lease fork $HEAD_BRANCH
 
-
-
 curl \
   -X POST \
   -H "${AUTH_HEADER}" -H "${API_HEADER}" \
-  "${URI}/$GITHUB_REPOSITORY/pulls/$PR_NUMBER/comments" \
+  "${URI}/$GITHUB_REPOSITORY/issues/$PR_NUMBER/comments" \
   -d "{\"body\":\"Rebased and autosquashed onto $BASE_BRANCH\"}"
