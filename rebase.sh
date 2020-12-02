@@ -78,19 +78,10 @@ git fetch fork $HEAD_BRANCH
 # do the rebase
 git checkout -b $HEAD_BRANCH fork/$HEAD_BRANCH
 
-git branch
-git log
-
-sleep 1
-
-git rebase origin/$BASE_BRANCH --autosquash
-
-sleep 1
-
-git branch
-git log
-
-sleep 1
+# EDITOR=true is required because for some reason --autosquash requires -i
+# However, we can't open vim in the script, so we just set the editor to
+# true so it exits immediately
+EDITOR=true git rebase -i --autosquash origin/$BASE_BRANCH
 
 # push back
 git push --force-with-lease fork $HEAD_BRANCH
